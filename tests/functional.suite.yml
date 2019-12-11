@@ -12,5 +12,5 @@ modules:
         - \Helper\Functional
         - Asserts
         - PhpBrowser:
-           url: 'http://localhost:8000'
+           url: '%APP_URL%'
     step_decorators: ~
