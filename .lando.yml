@@ -1,0 +1,30 @@
+name: hyperlite
+recipe: lemp
+# Config lando box
+config:
+  php: '7.3'
+  via: nginx
+  webroot: public
+  database: mariadb:10.2
+  xdebug: false
+  node:
+    type: node:8
+    globals:
+      yarn: "latest"
+# Services
+services:
+  database:
+    type: mariadb:10.2
+    portforward: 3306
+    creds:
+      user: root
+      password:
+      database:
+# Tooling e.g. node
+tooling:
+  yarn:
+    service: node
+  node:
+    service: node
+  npm:
+    service: node

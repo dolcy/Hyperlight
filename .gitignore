@@ -1,0 +1,8 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+.env
+/vendor
+/node_modules
+npm-debug.log
+yarn-error.log
+.php_cs.cache
+*.testing
