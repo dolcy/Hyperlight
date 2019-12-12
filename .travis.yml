@@ -1,12 +1,30 @@
 language: php
 os: linux
-dist: xenial
+dist: bionic
 sudo: false
 
 php:
   - 7.3
   - 7.4
 
-before_script: composer install
+services:
+  - mysql
 
-script: vendor/bin/codecept run
+before_script:
+  - composer self-update
+  - composer install --no-interaction
+
+env:
+  test:
+    - APP_URL='http://localhost:8000'
+    - DB_HOST=localhost
+    - DB_DATABASE=cycle
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS cycle;'
+  - mysql -u root --password="" --default-character-set=utf8
+
+script:
+  - php -S localhost:8000 -t public/
+  - vendor/bin/codecept build
+  - vendor/bin/codecept run
