@@ -514,16 +514,16 @@
         },
         {
             "name": "leocavalcante/siler",
-            "version": "1.7.0",
+            "version": "v1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leocavalcante/siler.git",
-                "reference": "6e7ce95b6ab03ee0729226c0d74af8939eac8894"
+                "reference": "a153d82ccd87924ec7a61b5e5c0dd202b65d55ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leocavalcante/siler/zipball/6e7ce95b6ab03ee0729226c0d74af8939eac8894",
-                "reference": "6e7ce95b6ab03ee0729226c0d74af8939eac8894",
+                "url": "https://api.github.com/repos/leocavalcante/siler/zipball/a153d82ccd87924ec7a61b5e5c0dd202b65d55ec",
+                "reference": "a153d82ccd87924ec7a61b5e5c0dd202b65d55ec",
                 "shasum": ""
             },
             "require": {
@@ -599,20 +599,20 @@
                 "router",
                 "swoole"
             ],
-            "time": "2019-11-30T14:45:52+00:00"
+            "time": "2019-12-11T13:33:16+00:00"
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "f4e7a6a1382183412246f0d361078c29fb85089e"
+                "reference": "a8593bf5176bf3d3f2966942c530be19b44ec87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/f4e7a6a1382183412246f0d361078c29fb85089e",
-                "reference": "f4e7a6a1382183412246f0d361078c29fb85089e",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/a8593bf5176bf3d3f2966942c530be19b44ec87c",
+                "reference": "a8593bf5176bf3d3f2966942c530be19b44ec87c",
                 "shasum": ""
             },
             "require": {
@@ -653,7 +653,7 @@
                 "php",
                 "type"
             ],
-            "time": "2019-11-30T20:20:49+00:00"
+            "time": "2019-12-11T13:45:14+00:00"
         },
         {
             "name": "psr/container",
@@ -795,16 +795,16 @@
         },
         {
             "name": "spiral/database",
-            "version": "v2.6.4",
+            "version": "v2.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/database.git",
-                "reference": "e3de3c3134d28544421514a9d7ff02404f106fd7"
+                "reference": "a8c25c6146496dc77b3ca56b3d94450c054ec7b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/database/zipball/e3de3c3134d28544421514a9d7ff02404f106fd7",
-                "reference": "e3de3c3134d28544421514a9d7ff02404f106fd7",
+                "url": "https://api.github.com/repos/spiral/database/zipball/a8c25c6146496dc77b3ca56b3d94450c054ec7b8",
+                "reference": "a8c25c6146496dc77b3ca56b3d94450c054ec7b8",
                 "shasum": ""
             },
             "require": {
@@ -837,7 +837,7 @@
                 }
             ],
             "description": "DBAL, schema introspection, migration and pagination",
-            "time": "2019-11-21T11:57:11+00:00"
+            "time": "2019-12-11T14:57:23+00:00"
         },
         {
             "name": "spiral/logger",
