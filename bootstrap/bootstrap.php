@@ -1,11 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 // bootstrap.php
-
-declare(strict_types=1);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\User;
 use Cycle\Annotated;
 use Cycle\ORM;
 use Cycle\ORM\Mapper\Mapper;
@@ -13,6 +10,8 @@ use Cycle\ORM\ORM as Cycle;
 use Cycle\ORM\Schema;
 use Cycle\Schema as Blueprint;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Hyperlight\User;
+use Siler\Route;
 use Spiral\Database;
 
 // dotenv
@@ -22,6 +21,11 @@ $dotenv->load();
 $whoops = new \Whoops\Run;
 $whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
+
+// root
+Route\get('/', function (): void {
+    echo 'Fantastic. We are green on root.<br>';
+});
 
 // dsn host,db settings
 $dbHost = getenv('DB_HOST');
@@ -96,7 +100,7 @@ $orm = $orm->withSchema(new Schema($schema));
 
 // create and persist users
 $u = new User();
-$u->setName("James Bond");
+$u->setName("Gordon Freeman");
 //$u = $orm->getRepository(User::class)->findByPK(3);
 print_r($u);
 //
