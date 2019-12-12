@@ -795,16 +795,16 @@
         },
         {
             "name": "spiral/database",
-            "version": "v2.6.5",
+            "version": "v2.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/database.git",
-                "reference": "a8c25c6146496dc77b3ca56b3d94450c054ec7b8"
+                "reference": "2e3e3c3d1202f924187335d27a19a2d6bda1eb62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/database/zipball/a8c25c6146496dc77b3ca56b3d94450c054ec7b8",
-                "reference": "a8c25c6146496dc77b3ca56b3d94450c054ec7b8",
+                "url": "https://api.github.com/repos/spiral/database/zipball/2e3e3c3d1202f924187335d27a19a2d6bda1eb62",
+                "reference": "2e3e3c3d1202f924187335d27a19a2d6bda1eb62",
                 "shasum": ""
             },
             "require": {
@@ -837,7 +837,7 @@
                 }
             ],
             "description": "DBAL, schema introspection, migration and pagination",
-            "time": "2019-12-11T14:57:23+00:00"
+            "time": "2019-12-12T09:18:26+00:00"
         },
         {
             "name": "spiral/logger",
@@ -924,26 +924,27 @@
         },
         {
             "name": "spiral/tokenizer",
-            "version": "v2.1.7",
+            "version": "v2.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/tokenizer.git",
-                "reference": "8b833e15739d24c1b3cc344d0095bfaceb753dae"
+                "reference": "5387797621402f469b240d5c0121a317fb57155e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/tokenizer/zipball/8b833e15739d24c1b3cc344d0095bfaceb753dae",
-                "reference": "8b833e15739d24c1b3cc344d0095bfaceb753dae",
+                "url": "https://api.github.com/repos/spiral/tokenizer/zipball/5387797621402f469b240d5c0121a317fb57155e",
+                "reference": "5387797621402f469b240d5c0121a317fb57155e",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
                 "spiral/core": "^1.0",
                 "spiral/logger": "^1.0",
-                "symfony/finder": "^4.1"
+                "symfony/finder": "^4.1|^5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~7.0"
+                "phpunit/phpunit": "~7.0",
+                "squizlabs/php_codesniffer": "^3.4"
             },
             "type": "library",
             "autoload": {
@@ -962,29 +963,29 @@
                 }
             ],
             "description": "Static Analysis: Class and Invocation locators",
-            "time": "2019-06-07T17:46:58+00:00"
+            "time": "2019-12-11T19:29:38+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.1",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "ce8743441da64c41e2a667b8eb66070444ed911e"
+                "reference": "17874dd8ab9a19422028ad56172fb294287a701b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/ce8743441da64c41e2a667b8eb66070444ed911e",
-                "reference": "ce8743441da64c41e2a667b8eb66070444ed911e",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/17874dd8ab9a19422028ad56172fb294287a701b",
+                "reference": "17874dd8ab9a19422028ad56172fb294287a701b",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.3"
+                "php": "^7.2.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.4-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -1011,7 +1012,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-17T21:56:56+00:00"
+            "time": "2019-11-18T17:27:11+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
