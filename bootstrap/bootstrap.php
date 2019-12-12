@@ -30,6 +30,8 @@ Route\get('/', function (): void {
 // dsn host,db settings
 $dbHost = getenv('DB_HOST');
 $dbData = getenv('DB_DATABASE');
+$dbUser = getenv('DB_USER');
+$dbPasswd = getenv('DB_PASSWD');
 
 // data config
 $dbal = new Database\DatabaseManager(
@@ -42,8 +44,8 @@ $dbal = new Database\DatabaseManager(
           'mysql' => [
               'driver'  => Database\Driver\MySQL\MySQLDriver::class,
               'connection' => 'mysql:host=' . $dbHost . ';' . 'dbname=' . $dbData,
-              'username'   => 'root',
-              'password'   => '',
+              'username'   => $dbUser,
+              'password'   => $dbPasswd,
           ],
             'sqlite' => [
                 'driver'  => Database\Driver\SQLite\SQLiteDriver::class,
