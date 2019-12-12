@@ -7,4 +7,4 @@ yarn-error.log
 .php_cs.cache
 *.testing
 /tests/_output/*
-/tests/_support/_generated/*
+/tests/_support/*
