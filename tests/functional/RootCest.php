@@ -9,7 +9,7 @@ class RootCest
     }
 
     // tests
-    public function checkForRootPage(FunctionalTester $I) : FuntionalTeser
+    public function checkForRootPage(FunctionalTester $I)
     {
         $I->amOnPage('/');
         $I->see('Fantastic');
