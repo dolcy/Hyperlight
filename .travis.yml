@@ -14,6 +14,7 @@ before_script:
   - composer self-update
   - composer install --no-interaction
   - mysql -e 'create database cycle;'
+  - php -S localhost:8000 -t public/
 
 env:
   test:
@@ -23,6 +24,4 @@ env:
     - DB_USER=travis
 
 script:
-  - php -S localhost:8000 -t public/
-  - vendor/bin/codecept build
   - vendor/bin/codecept run
