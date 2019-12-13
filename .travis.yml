@@ -14,8 +14,7 @@ before_script:
   - composer self-update
   - composer install --no-interaction
   - mysql -e 'create database cycle;'
-  - php -S localhost:8000 -t public/
-
+  
 env:
   test:
     - APP_URL='http://localhost:8000'
