@@ -14,13 +14,6 @@ php:
 services:
   - mysql
 
-# Run the composer, mysql and cp .env scripts
-before_script:
-  - composer self-update
-  - composer install --no-interaction
-  - mysql -e 'create database cycle;'
-  - cp .env.testing.dist .env.testing
-
 # Set .env testing environment
 env:
   test:
@@ -29,9 +22,15 @@ env:
     - DB_DATABASE=cycle
     - DB_USER=travis
 
+# Run the composer, mysql and cp .env scripts
+before_script:
+  - composer self-update
+  - composer install --no-interaction
+  - mysql -e 'create database cycle;'
+  - cp .env.testing.dist .env.testing
+  - php -S 0.0.0.0:8000 -t public &
+
 # Boot php server and run codeception
 script:
-  - php -S 0.0.0.0:8000 -t public
-  - sleep 5
   - composer build-test
   - composer run-test
