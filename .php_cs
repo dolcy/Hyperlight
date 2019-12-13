@@ -10,12 +10,14 @@ return PhpCsFixer\Config::create()
             ->files()
             ->in(__DIR__ . '/bootstrap')
             ->in(__DIR__ . '/src')
+            ->in(__DIR__ . '/tests')
             ->append([__FILE__])
             ->notName('DefaultRuleProvider.php')
     )
     ->setRiskyAllowed(true)
     ->setRules([
         '@PSR2' => true,
+        'array_indentation' => true,
         'concat_space' => ['spacing' => 'one'],
         'declare_strict_types' => true,
         'no_alias_functions' => true,
