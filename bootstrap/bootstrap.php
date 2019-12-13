@@ -12,7 +12,7 @@ use Cycle\ORM\Schema;
 use Cycle\Schema as Blueprint;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Hyperlight\Config\DataConnector;
-use Hyperlight\User;
+use Hyperlight\Domain\User\UserEntity as User;
 use Siler\Route;
 
 // dotenv
