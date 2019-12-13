@@ -13,5 +13,6 @@ class RootCest
     {
         $I->amOnPage('/');
         $I->see('Fantastic');
+        $I->see('Hyperlight\User');
     }
 }
