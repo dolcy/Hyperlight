@@ -1,82 +1,55 @@
-<?php declare(strict_types=1);
-// bootstrap.php
+<?php
 
+declare(strict_types=1);
+
+// bootstrap.php
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Cycle\Annotated;
 use Cycle\ORM;
 use Cycle\ORM\Mapper\Mapper;
-use Cycle\ORM\ORM as Cycle;
 use Cycle\ORM\Schema;
 use Cycle\Schema as Blueprint;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Hyperlight\Config\DataConnector;
 use Hyperlight\User;
 use Siler\Route;
-use Spiral\Database;
 
 // dotenv
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-$whoops = new \Whoops\Run;
-$whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops = new \Whoops\Run();
+$whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler());
 $whoops->register();
 
 // root
 Route\get('/', function (): void {
-    echo 'Fantastic. We are green on root.<br>';
+    echo 'Fantastic. We are green on root.<br><br>';
 });
 
-// dsn host,db settings
-$dbHost = getenv('DB_HOST');
-$dbData = getenv('DB_DATABASE');
-$dbUser = getenv('DB_USER');
-$dbPasswd = getenv('DB_PASSWD');
-
-// data config
-$dbal = new Database\DatabaseManager(
-    new Database\Config\DatabaseConfig([
-        'default'     => 'default',
-        'databases'   => [
-            'default' => ['connection' => 'mysql']
-        ],
-        'connections' => [
-          'mysql' => [
-              'driver'  => Database\Driver\MySQL\MySQLDriver::class,
-              'connection' => 'mysql:host=' . $dbHost . ';' . 'dbname=' . $dbData,
-              'username'   => $dbUser,
-              'password'   => $dbPasswd,
-          ],
-            'sqlite' => [
-                'driver'  => Database\Driver\SQLite\SQLiteDriver::class,
-                'connection' => 'sqlite:database.db',
-                'username'   => '',
-                'password'   => '',
-            ]
-        ]
-    ])
-);
-
-// initiate orm service
-$orm = new Cycle(new ORM\Factory($dbal));
+// iniitate database connector
+$db = new DataConnector();
+$orm = $db->connect();
+$dbal = $db->abstractor();
 
 // schema mapping
 $orm = $orm->withSchema(new ORM\Schema([
     'user' => [
-         ORM\Schema::MAPPER      => Mapper::class, // default POPO mapper
-         ORM\Schema::ENTITY      => User::class,
-         ORM\Schema::DATABASE    => 'default',
-         ORM\Schema::TABLE       => 'users',
-         ORM\Schema::PRIMARY_KEY => 'id',
-         ORM\Schema::COLUMNS     => [
+        ORM\Schema::MAPPER      => Mapper::class, // default POPO mapper
+        ORM\Schema::ENTITY      => User::class,
+        ORM\Schema::DATABASE    => 'default',
+        ORM\Schema::TABLE       => 'users',
+        ORM\Schema::PRIMARY_KEY => 'id',
+        ORM\Schema::COLUMNS     => [
             'id'   => 'id',  // property => column
             'name' => 'name'
-         ],
-         Schema::TYPECAST    => [
+        ],
+        Schema::TYPECAST    => [
             'id' => 'int'
-         ],
-         Schema::RELATIONS   => []
-     ]
+        ],
+        Schema::RELATIONS   => []
+    ]
 ]));
 
 // set data finder
@@ -101,11 +74,11 @@ $schema = (new Blueprint\Compiler())->compile(new Blueprint\Registry($dbal), [
 $orm = $orm->withSchema(new Schema($schema));
 
 // create and persist users
-$u = new User();
-$u->setName("Gordon Freeman");
+$user = new User();
+$user->setName('The Mandalorian');
 //$u = $orm->getRepository(User::class)->findByPK(3);
-print_r($u);
-//
-$t = new ORM\Transaction($orm);
-$t->persist($u);
-$t->run();
+print_r($user);
+
+$transactor = new ORM\Transaction($orm);
+$transactor->persist($user);
+$transactor->run();

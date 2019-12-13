@@ -1,26 +1,28 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Hyperlight;
 
-use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Column;
+use Cycle\Annotated\Annotation\Entity;
 
 /**
  * @Entity
  */
-class User
+final class User
 {
     /**
      * @Column(type="primary")
      * @var int
      */
-    protected $id;
+    private $id;
 
     /**
      * @Column(type="string")
      * @var string
      */
-    protected $name;
+    private $name;
 
     public function getId(): int
     {
