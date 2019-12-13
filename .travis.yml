@@ -1,21 +1,27 @@
+# Initial config file for https://travis-ci.org/
+# Validate this file here - http://lint.travis-ci.org/
 language: php
 os: linux
 dist: bionic
 sudo: false
 
+# Select php versions for testing
 php:
   - 7.3
   - 7.4
 
+# Add services
 services:
   - mysql
 
+# Run the composer, mysql and cp .env scripts
 before_script:
   - composer self-update
   - composer install --no-interaction
   - mysql -e 'create database cycle;'
-  - cp .env.dist .env.testing
+  - cp .env.testing.dist .env.testing
 
+# Set .env testing environment
 env:
   test:
     - APP_URL='http://localhost:8000'
@@ -23,6 +29,9 @@ env:
     - DB_DATABASE=cycle
     - DB_USER=travis
 
+# Boot php server and run codeception
 script:
-  - vendor/bin/codecept build
-  - vendor/bin/codecept run
+  - php -S 0.0.0.0:8000 -t public
+  - sleep 5
+  - composer build-test
+  - composer run-test
