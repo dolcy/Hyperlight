@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hyperlight;
+namespace Hyperlight\Domain\User;
 
 use Cycle\Annotated\Annotation\Column;
 use Cycle\Annotated\Annotation\Entity;
@@ -10,7 +10,7 @@ use Cycle\Annotated\Annotation\Entity;
 /**
  * @Entity
  */
-final class User
+final class UserEntity
 {
     /**
      * @Column(type="primary")
