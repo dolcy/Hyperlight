@@ -1,13 +1,20 @@
 {
   "name": "dolcy/hyperlite",
   "description": "Hyperlite is a boilerplate based on Siler and Cycle ORM.",
+  "license": "MIT",
+  "authors": [{
+    "name": "Shaughn Dolcy",
+    "email": "shaughn@dolcy.com"
+  }],
   "require": {
     "php": "^7.2",
     "leocavalcante/siler": "^1.7",
     "cycle/orm": "^1.1",
     "cycle/annotated": "^2.0",
     "filp/whoops": "^2.5",
-    "vlucas/phpdotenv": "^4.0"
+    "vlucas/phpdotenv": "^4.0",
+    "symfony/finder": "^4.4.1",
+    "symfony/console": "^4.4.1"
   },
   "require-dev": {
     "codeception/codeception": "4.0.x-dev",
@@ -15,12 +22,9 @@
     "codeception/verify": "^1.2",
     "codeception/specify": "^1.2",
     "codeception/module-phpbrowser": "^1.0",
-    "phpstan/phpstan": "^0.12.2"
+    "phpstan/phpstan": "^0.12.2",
+    "nunomaduro/phpinsights": "^1.11"
   },
-  "authors": [{
-    "name": "Shaughn Dolcy",
-    "email": "shaughn@dolcy.com"
-  }],
   "autoload": {
     "psr-4": {
       "Hyperlight\\": "src/"
