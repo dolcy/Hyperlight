@@ -24,4 +24,5 @@ env:
     - DB_USER=travis
 
 script:
+  - vendor/bin/codecept build
   - vendor/bin/codecept run
