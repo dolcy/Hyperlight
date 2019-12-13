@@ -13,16 +13,14 @@ services:
 before_script:
   - composer self-update
   - composer install --no-interaction
+  - mysql -e 'create database cycle;'
 
 env:
   test:
     - APP_URL='http://localhost:8000'
     - DB_HOST=localhost
     - DB_DATABASE=cycle
-
-before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS cycle;'
-  - mysql -u root --password="" --default-character-set=utf8
+    - DB_USER=travis
 
 script:
   - php -S localhost:8000 -t public/
