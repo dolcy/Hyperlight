@@ -18,6 +18,8 @@ return PhpCsFixer\Config::create()
     ->setRules([
         '@PSR2' => true,
         'array_indentation' => true,
+        'single_blank_line_before_namespace' => true,
+        'blank_line_after_opening_tag' => true,
         'concat_space' => ['spacing' => 'one'],
         'declare_strict_types' => true,
         'no_alias_functions' => true,
