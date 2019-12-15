@@ -33,10 +33,6 @@ $db = new DataConnector();
 $orm = $db->connect();
 $dbal = $db->abstractor();
 
-echo '<pre>';
-print_r($dbal);
-echo '</pre>';
-
 // schema mapping
 $orm = $orm->withSchema(new ORM\Schema([
     'user' => [
