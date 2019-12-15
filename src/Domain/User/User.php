@@ -10,7 +10,7 @@ use Cycle\Annotated\Annotation\Entity;
 /**
  * @Entity
  */
-final class UserEntity
+final class User
 {
     /**
      * @Column(type="primary")

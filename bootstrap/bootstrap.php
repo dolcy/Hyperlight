@@ -12,7 +12,7 @@ use Cycle\ORM\Schema;
 use Cycle\Schema as Blueprint;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Hyperlight\Config\DataConnector;
-use Hyperlight\Domain\User\UserEntity as User;
+use Hyperlight\Domain\User\User;
 use Siler\Route;
 
 // dotenv
@@ -32,6 +32,10 @@ Route\get('/', function (): void {
 $db = new DataConnector();
 $orm = $db->connect();
 $dbal = $db->abstractor();
+
+echo '<pre>';
+print_r($dbal);
+echo '</pre>';
 
 // schema mapping
 $orm = $orm->withSchema(new ORM\Schema([
@@ -75,7 +79,7 @@ $orm = $orm->withSchema(new Schema($schema));
 
 // create and persist users
 $user = new User();
-$user->setName('The Mandalorian');
+$user->setName('Steve Austin');
 //$u = $orm->getRepository(User::class)->findByPK(3);
 print_r($user);
 
