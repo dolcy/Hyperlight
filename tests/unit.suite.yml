@@ -5,6 +5,14 @@
 actor: UnitTester
 modules:
     enabled:
+        - Db
         - Asserts
         - \Helper\Unit
+    config:
+        Db:
+            dsn: 'mysql:host=%DB_HOST%;dbname=%DB_DATABASE%'
+            user: 'root'
+            password: ''
+            cleanup: true
+            reconnect: true
     step_decorators: ~
