@@ -6,17 +6,20 @@ use Hyperlight\Config\DataConnector;
 
 class DataConnectorCest
 {
+    public function _before(UnitTester $I): void
+    {
+        $this->db = new DataConnector();
+    }
     // tests
     public function testForDataConnection(UnitTester $I): void
     {
         $I->wantTo('test database host connection with table');
         $I->lookForwardTo('verifying that a test table was created');
-        // new instance of dataconnector
-        $db = new DataConnector();
-        $connection = $db->abstractor();
+        // new instance of DataConnector
+        $connection = $this->db->abstractor();
         // set test database
         $test = $connection->database('default')->table('cycle_test');
-        // prepare test schema
+        // create test schema
         $schema = $test->getSchema();
         $schema->primary('id');
         $schema->string('status');
