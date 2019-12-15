@@ -10,6 +10,7 @@ class DataConnectorCest
     {
         $this->db = new DataConnector();
     }
+
     // tests
     public function testForDataConnection(UnitTester $I): void
     {
@@ -34,5 +35,10 @@ class DataConnectorCest
         ]);
         $I->expect('to get persistent connection to cycle_test table/record');
         $I->seeInDatabase('cycle_test', ['status' => 'Connection test is green']);
+    }
+
+    public function _after(UnitTester $I): void
+    {
+        $this->db = null;
     }
 }
