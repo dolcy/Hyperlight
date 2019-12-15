@@ -1,9 +1,7 @@
 <?php
 
 declare(strict_types=1);
-/**
- * php_cs rules
- */
+
 return PhpCsFixer\Config::create()
     ->setFinder(
         PhpCsFixer\Finder::create()
@@ -18,7 +16,10 @@ return PhpCsFixer\Config::create()
     ->setRules([
         '@PSR2' => true,
         'array_indentation' => true,
+        'single_blank_line_before_namespace' => true,
+        'blank_line_after_opening_tag' => true,
         'concat_space' => ['spacing' => 'one'],
+        // 'header_comment' => ['header' => 'code header here'],
         'declare_strict_types' => true,
         'no_alias_functions' => true,
         'no_unused_imports' => true,

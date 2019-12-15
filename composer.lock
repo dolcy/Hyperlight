@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5b838d38cb476dbb73f29c2c3a0da9f",
+    "content-hash": "ad5c5b45cca6080223d0b4ab9afc83c9",
     "packages": [
         {
             "name": "cycle/annotated",
@@ -603,16 +603,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "318ad673ba36e53e10ca510aec1c54b4f2a5f2ae"
+                "reference": "100a25207566930efd926cf205542946aa692e01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/318ad673ba36e53e10ca510aec1c54b4f2a5f2ae",
-                "reference": "318ad673ba36e53e10ca510aec1c54b4f2a5f2ae",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/100a25207566930efd926cf205542946aa692e01",
+                "reference": "100a25207566930efd926cf205542946aa692e01",
                 "shasum": ""
             },
             "require": {
@@ -654,7 +654,7 @@
                 "php",
                 "type"
             ],
-            "time": "2019-12-13T00:10:22+00:00"
+            "time": "2019-12-14T13:46:39+00:00"
         },
         {
             "name": "psr/container",
@@ -1326,30 +1326,31 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v4.0.1",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "55dc9010920405c6fcf440667ab70a6a6f9a2ac7"
+                "reference": "0176075a1b7ee9cf86f70143ec79edf7072c975a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/55dc9010920405c6fcf440667ab70a6a6f9a2ac7",
-                "reference": "55dc9010920405c6fcf440667ab70a6a6f9a2ac7",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/0176075a1b7ee9cf86f70143ec79edf7072c975a",
+                "reference": "0176075a1b7ee9cf86f70143ec79edf7072c975a",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9 || ^7.0",
-                "phpoption/phpoption": "^1.6",
+                "phpoption/phpoption": "^1.7.1",
                 "symfony/polyfill-ctype": "^1.9"
             },
             "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.3",
                 "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -1379,7 +1380,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2019-12-08T15:09:05+00:00"
+            "time": "2019-12-14T13:59:29+00:00"
         },
         {
             "name": "zendframework/zend-hydrator",
@@ -1556,12 +1557,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "c145d60a0dc1e42e346d084ac0c00a761aabc2f6"
+                "reference": "3eae7b371714a223873695b9238eaebf12afd169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/c145d60a0dc1e42e346d084ac0c00a761aabc2f6",
-                "reference": "c145d60a0dc1e42e346d084ac0c00a761aabc2f6",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/3eae7b371714a223873695b9238eaebf12afd169",
+                "reference": "3eae7b371714a223873695b9238eaebf12afd169",
                 "shasum": ""
             },
             "require": {
@@ -1633,7 +1634,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2019-12-07T08:51:35+00:00"
+            "time": "2019-12-14T09:24:43+00:00"
         },
         {
             "name": "codeception/lib-asserts",
@@ -1784,6 +1785,57 @@
                 "codeception"
             ],
             "time": "2019-11-13T17:32:27+00:00"
+        },
+        {
+            "name": "codeception/module-db",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/module-db.git",
+                "reference": "13a2b86206d09c50ab2e5375b261df35b650e58f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/module-db/zipball/13a2b86206d09c50ab2e5375b261df35b650e58f",
+                "reference": "13a2b86206d09c50ab2e5375b261df35b650e58f",
+                "shasum": ""
+            },
+            "require": {
+                "codeception/codeception": "*@dev",
+                "php": ">=5.6.0 <8.0"
+            },
+            "conflict": {
+                "codeception/codeception": "<4.0"
+            },
+            "require-dev": {
+                "codeception/util-robohelpers": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Bodnarchuk"
+                },
+                {
+                    "name": "Gintautas Miselis"
+                }
+            ],
+            "description": "WebDriver module for Codeception",
+            "homepage": "http://codeception.com/",
+            "keywords": [
+                "acceptance-testing",
+                "browser-testing",
+                "codeception"
+            ],
+            "time": "2019-12-08T17:56:49+00:00"
         },
         {
             "name": "codeception/module-phpbrowser",
@@ -3517,16 +3569,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.2",
+            "version": "0.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "15a2c2b7d4195aa712506e14763ef7646ac6a08c"
+                "reference": "c15a6ea55da71d8133399306f560cfe4d30301b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/15a2c2b7d4195aa712506e14763ef7646ac6a08c",
-                "reference": "15a2c2b7d4195aa712506e14763ef7646ac6a08c",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/c15a6ea55da71d8133399306f560cfe4d30301b7",
+                "reference": "c15a6ea55da71d8133399306f560cfe4d30301b7",
                 "shasum": ""
             },
             "require": {
@@ -3553,7 +3605,7 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2019-12-09T09:13:49+00:00"
+            "time": "2019-12-14T13:41:17+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
