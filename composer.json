@@ -12,7 +12,7 @@
     "cycle/orm": "^1.1",
     "cycle/annotated": "^2.0",
     "filp/whoops": "^2.5",
-    "vlucas/phpdotenv": "^4.0",
+    "vlucas/phpdotenv": "^3.6",
     "symfony/finder": "^4.4.1",
     "symfony/console": "^4.4.1"
   },

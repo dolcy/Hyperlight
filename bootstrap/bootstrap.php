@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-// bootstrap.php
-require_once __DIR__ . '/../vendor/autoload.php';
-
 use Cycle\Annotated;
 use Cycle\ORM;
 use Cycle\ORM\Mapper\Mapper;
@@ -13,17 +10,21 @@ use Cycle\Schema as Blueprint;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Hyperlight\Config\DataConnector;
 use Hyperlight\Domain\User\User;
+use function Siler\Dotenv\init;
 use Siler\Route;
 
-// dotenv
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+// require autoload
+require_once __DIR__ . '/../vendor/autoload.php';
 
+// error handler
 $whoops = new \Whoops\Run();
 $whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler());
 $whoops->register();
 
-// root
+// init dotenv via siler helper
+$dotenv = init(__DIR__ . '/../');
+
+// initial root route
 Route\get('/', function (): void {
     echo 'Fantastic. We are green on root.<br><br>';
 });
