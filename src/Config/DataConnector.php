@@ -6,6 +6,7 @@ namespace Hyperlight\Config;
 
 use Cycle\ORM;
 use Cycle\ORM\ORM as Cycle;
+use function Siler\Dotenv\env;
 use Spiral\Database;
 use Spiral\Database\DatabaseManager;
 
@@ -19,10 +20,10 @@ class DataConnector
     public function abstractor(): DatabaseManager
     {
         // db settings via .env
-        $dbHost = getenv('DB_HOST');
-        $dbData = getenv('DB_DATABASE');
-        $dbUser = getenv('DB_USER');
-        $dbPasswd = getenv('DB_PASSWD');
+        $dbHost = env('DB_HOST');
+        $dbData = env('DB_DATABASE');
+        $dbUser = env('DB_USER');
+        $dbPasswd = env('DB_PASSWD');
 
         // dbal connection settings
         return new Database\DatabaseManager(
