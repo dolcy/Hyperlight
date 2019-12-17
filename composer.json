@@ -29,7 +29,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Hyperlight\\": "src/"
+      "Hyperlight\\": "src/",
+      "Hyperlight\\Config\\": "config/"
     }
   },
   "autoload-dev": {

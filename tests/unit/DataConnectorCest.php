@@ -29,12 +29,12 @@ class DataConnectorCest
         $schema->save();
         // insert test data
         $test->insertOne([
-            'status'       => 'Connection test is green',
+            'status'       => 'Connection test is green.',
             'created_at' => new DateTimeImmutable(),
             'updated_at' => new DateTimeImmutable(),
         ]);
         $I->expect('to get persistent connection to cycle_test table/record');
-        $I->seeInDatabase('cycle_test', ['status' => 'Connection test is green']);
+        $I->seeInDatabase('cycle_test', ['status' => 'Connection test is green.']);
     }
 
     public function _after(UnitTester $I): void
