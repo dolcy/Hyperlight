@@ -10,9 +10,9 @@ modules:
         - \Helper\Unit
     config:
         Db:
-            dsn: 'mysql:host=%DB_HOST%;dbname=%DB_DATABASE%'
-            user: 'root'
-            password: ''
+            dsn: 'mysql:host=%DB_HOST%;dbname=%DB_DATABASE%;port=%DB_PORT%'
+            user: '%DB_USER%'
+            password: '%DB_PASSWD%'
             cleanup: true
             reconnect: true
     step_decorators: ~

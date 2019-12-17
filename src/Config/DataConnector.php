@@ -24,6 +24,7 @@ class DataConnector
         $dbData = env('DB_DATABASE');
         $dbUser = env('DB_USER');
         $dbPasswd = env('DB_PASSWD');
+        $dbPort = env('DB_PORT');
 
         // dbal connection settings
         return new Database\DatabaseManager(
@@ -35,7 +36,7 @@ class DataConnector
                 'connections' => [
                     'mysql' => [
                         'driver' => Database\Driver\MySQL\MySQLDriver::class,
-                        'connection' => "mysql:host=${dbHost};dbname=${dbData}",
+                        'connection' => "mysql:host=${dbHost};dbname=${dbData};port=${dbPort}",
                         'username' => $dbUser,
                         'password' => $dbPasswd,
                     ],
