@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Hyperlight\Domain;
 
-class AnnotationPipeline
+class SchemaPipeline
 {
     public function build(): void
     {
-        echo "Annotation definitions here.";
+        echo "Schema definitions here.";
     }
 }
