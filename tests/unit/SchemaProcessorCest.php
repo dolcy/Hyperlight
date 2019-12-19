@@ -9,8 +9,8 @@ class SchemaProcessorCest
 {
     public function _before(UnitTester $I): void
     {
-        $db = new DataConnector();
-        $this->pipeline = new SchemaProcessor($db);
+        $persistence = new DataConnector();
+        $this->pipeline = new SchemaProcessor($persistence);
     }
 
     // tests
