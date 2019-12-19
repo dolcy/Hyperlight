@@ -2,19 +2,23 @@
 
 declare(strict_types=1);
 
+use Hyperlight\Config\DataConnector;
 use Hyperlight\Factory\SchemaFactory;
 
 class SchemaFactoryCest
 {
+    private $persistence;
+
     public function _before(UnitTester $I): void
     {
-        $this->schema = new SchemaFactory();
+        $persistence = new DataConnector();
+        $this->schema = new SchemaFactory($persistence);
     }
 
     // tests
-    public function testSchemaFactoryOutput(UnitTester $I): void
+    public function testSchemaFactoryOutput(UnitTester $I, $persistence): void
     {
         $I->wantTo('test the output of the schema factory');
-        $schema = $this->schema->generate();
+        $schema = $this->schema->generate($persistence);
     }
 }
