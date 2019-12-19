@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-use Cycle\Annotated;
 use Cycle\ORM;
 use Cycle\ORM\Mapper\Mapper;
 use Cycle\ORM\Schema;
-use Cycle\Schema as Blueprint;
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use Hyperlight\Config\DataConnector;
+use Hyperlight\Domain\SchemaProcessor;
 use Hyperlight\Domain\User\User;
 use function Siler\Dotenv\init;
 use Siler\Route;
@@ -22,7 +20,7 @@ $whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler());
 $whoops->register();
 
 // init dotenv via siler helper
-$dotenv = init(__DIR__ . '/../');
+init(__DIR__ . '/../');
 
 // initial root route
 Route\get('/', function (): void {
@@ -30,9 +28,8 @@ Route\get('/', function (): void {
 });
 
 // iniitate database connector
-$db = new DataConnector();
-$orm = $db->connect();
-$dbal = $db->abstractor();
+$persistence = new DataConnector();
+$orm = $persistence->connect();
 
 // schema mapping
 $orm = $orm->withSchema(new ORM\Schema([
@@ -53,25 +50,13 @@ $orm = $orm->withSchema(new ORM\Schema([
     ]
 ]));
 
-// set data finder
-$finder = (new \Symfony\Component\Finder\Finder())->files()->in([__DIR__ . '/../src']);
-$classLocator = new \Spiral\Tokenizer\ClassLocator($finder);
+// instantiate schema processor
+$schema = new SchemaProcessor($persistence);
 
-// autoload annotations
-AnnotationRegistry::registerLoader('class_exists');
+// compile dbal options
+$schema = $schema->compile();
 
-$schema = (new Blueprint\Compiler())->compile(new Blueprint\Registry($dbal), [
-    new Annotated\Embeddings($classLocator),            // register embeddable entities
-    new Annotated\Entities($classLocator),              // register annotated entities
-    new Blueprint\Generator\ResetTables(),       // re-declared table schemas (remove columns)
-    new Blueprint\Generator\GenerateRelations(), // generate entity relations
-    new Blueprint\Generator\ValidateEntities(),  // make sure all entity schemas are correct
-    new Blueprint\Generator\RenderTables(),      // declare table schemas
-    new Blueprint\Generator\RenderRelations(),   // declare relation keys and indexes
-    new Blueprint\Generator\SyncTables(),        // sync table changes to database
-    new Blueprint\Generator\GenerateTypecast(),  // typecast non string columns
-]);
-
+// create new schema
 $orm = $orm->withSchema(new Schema($schema));
 
 // create and persist users
