@@ -42,7 +42,7 @@
     "serve": "php -S 0.0.0.0:8000 -t public",
     "build-test": "codecept build",
     "run-test": "codecept run",
-    "run-phpstan": "phpstan analyse"
+    "run-stan": "phpstan analyse --ansi"
   },
   "config": {
     "process-timeout": 0
