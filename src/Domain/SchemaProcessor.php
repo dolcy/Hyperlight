@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Hyperlight\Domain;
 
 use Cycle\Annotated;
-use Cycle\Schema as Blueprint;
+use Cycle\Schema;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Hyperlight\Config\DataConnector;
 use Spiral\Tokenizer\ClassLocator;
@@ -53,16 +53,16 @@ class SchemaProcessor
         AnnotationRegistry::registerLoader('class_exists');
 
         // Process and compile schema registry
-        return (new Blueprint\Compiler())->compile(new Blueprint\Registry($this->connector->abstractor()), [
+        return (new Schema\Compiler())->compile(new Schema\Registry($this->connector->abstractor()), [
             new Annotated\Embeddings($classLocator), // embeddable entities
             new Annotated\Entities($classLocator), // annotated entities
-            new Blueprint\Generator\ResetTables(), // schema, remove columns
-            new Blueprint\Generator\GenerateRelations(), // entity relations
-            new Blueprint\Generator\ValidateEntities(), // entity schema validator
-            new Blueprint\Generator\RenderTables(), // declare table schemas
-            new Blueprint\Generator\RenderRelations(), // relation keys and indexes
-            new Blueprint\Generator\SyncTables(), // sync table changes to database
-            new Blueprint\Generator\GenerateTypecast(), // typecast non string columns
+            new Schema\Generator\ResetTables(), // schema, remove columns
+            new Schema\Generator\GenerateRelations(), // entity relations
+            new Schema\Generator\ValidateEntities(), // entity schema validator
+            new Schema\Generator\RenderTables(), // declare table schemas
+            new Schema\Generator\RenderRelations(), // relation keys and indexes
+            new Schema\Generator\SyncTables(), // sync table changes to database
+            new Schema\Generator\GenerateTypecast(), // typecast non string columns
         ]);
     }
 }
