@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 use Cycle\ORM;
-use Cycle\ORM\Mapper\Mapper;
 use Cycle\ORM\Schema;
 use Hyperlight\Config\DataConnector;
 use Hyperlight\Domain\SchemaProcessor;
 use Hyperlight\Domain\User\User;
+use Hyperlight\Factory\SchemaFactory;
 use function Siler\Dotenv\init;
 use Siler\Route;
 
@@ -31,37 +31,22 @@ Route\get('/', function (): void {
 $persistence = new DataConnector();
 $orm = $persistence->connect();
 
-// schema mapping
-$orm = $orm->withSchema(new ORM\Schema([
-    'user' => [
-        ORM\Schema::MAPPER      => Mapper::class, // default POPO mapper
-        ORM\Schema::ENTITY      => User::class,
-        ORM\Schema::DATABASE    => 'default',
-        ORM\Schema::TABLE       => 'users',
-        ORM\Schema::PRIMARY_KEY => 'id',
-        ORM\Schema::COLUMNS     => [
-            'id'   => 'id',  // property => column
-            'name' => 'name'
-        ],
-        Schema::TYPECAST    => [
-            'id' => 'int'
-        ],
-        Schema::RELATIONS   => []
-    ]
-]));
+// generate schema properties
+$schemaFactory = new SchemaFactory($persistence);
+$orm = $schemaFactory->generate($orm);
 
 // instantiate schema processor
 $schema = new SchemaProcessor($persistence);
 
-// compile dbal options
+// compile dbal registry options
 $schema = $schema->compile();
 
-// create new schema
+// create new schema with compiled registry
 $orm = $orm->withSchema(new Schema($schema));
 
 // create and persist users
 $user = new User();
-$user->setName('Steve Austin');
+$user->setName('Flash Gordon');
 //$u = $orm->getRepository(User::class)->findByPK(3);
 print_r($user);
 
