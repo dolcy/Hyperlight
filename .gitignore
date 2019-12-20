@@ -8,3 +8,4 @@ yarn-error.log
 *.testing
 /tests/_output/*
 /tests/_support/*
+/storage/*.log

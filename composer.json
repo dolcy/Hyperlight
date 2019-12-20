@@ -14,7 +14,8 @@
     "filp/whoops": "^2.5",
     "vlucas/phpdotenv": "^3.6",
     "symfony/finder": "^4.4.1",
-    "symfony/console": "^4.4.1"
+    "symfony/console": "^4.4.1",
+    "monolog/monolog": "^2.0"
   },
   "require-dev": {
     "codeception/codeception": "4.0.x-dev",
