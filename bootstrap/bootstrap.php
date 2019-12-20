@@ -11,9 +11,7 @@ use Siler\Route;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // error handler
-$whoops = new \Whoops\Run();
-$whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler());
-$whoops->register();
+require_once __DIR__ . '/_error.php';
 
 // init dotenv via siler helper
 init(__DIR__ . '/../');
@@ -24,7 +22,7 @@ Route\get('/', function (): void {
 });
 
 // initiate cycle orm
-require_once __DIR__ . '/cycle.php';
+require_once __DIR__ . '/_cycle.php';
 
 // temporary orm test
 $user = new User();
