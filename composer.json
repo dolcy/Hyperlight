@@ -30,8 +30,9 @@
   },
   "autoload": {
     "psr-4": {
-      "Hyperlight\\": "src/",
-      "Hyperlight\\Config\\": "config/"
+      "Hyperlight\\Bootstrap\\Loader\\": "bootstrap/loader/",
+      "Hyperlight\\Config\\": "config/",
+      "Hyperlight\\": "src/"
     }
   },
   "autoload-dev": {

@@ -2,35 +2,14 @@
 
 declare(strict_types=1);
 
+namespace Hyperlight\Bootstrap;
+
 use Cycle\ORM;
 use Hyperlight\Domain\User\User;
-use function Siler\Dotenv\init;
 use Siler\Route;
 
-/**
- * initial bootstrap
- */
-require_once __DIR__ . '/../vendor/autoload.php';
-
-/**
- * error handler
- */
-require_once __DIR__ . '/_error.php';
-
-/**
- *  debug log
- */
-require_once __DIR__ . '/_debug.php';
-
-/**
- * init dotenv
- */
-init(__DIR__ . '/../');
-
-/**
- * initialize cycle orm
- */
-require_once __DIR__ . '/_cycle.php';
+// include main init file
+require_once(__DIR__ . '/init.php');
 
 // temporary route test
 Route\get('/', function (): void {
@@ -39,7 +18,7 @@ Route\get('/', function (): void {
 
 // temporary orm test
 $user = new User();
-$user->setName('Jason Bourne');
+$user->setName('James Bond');
 //$u = $orm->getRepository(User::class)->findByPK(3);
 print_r($user);
 
