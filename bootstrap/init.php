@@ -10,7 +10,7 @@ use Hyperlight\Bootstrap\Loader\LogLoader;
 use function Siler\Dotenv\init;
 
 /**
- * bootstrap autloader
+ * bootstrap autoloader
  */
 require_once(__DIR__ . '/../vendor/autoload.php');
 
