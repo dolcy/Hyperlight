@@ -18,7 +18,7 @@ Route\get('/', function (): void {
 
 // temporary orm test
 $user = new User();
-$user->setName('James Bond');
+$user->setName('The Witcher');
 //$u = $orm->getRepository(User::class)->findByPK(3);
 print_r($user);
 
