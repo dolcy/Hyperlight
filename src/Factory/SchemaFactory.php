@@ -18,7 +18,6 @@ class SchemaFactory
      */
     public function generate($orm)
     {
-
         // schema mapping
         return $orm->withSchema(new Schema([
             'user' => [
