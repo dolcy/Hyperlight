@@ -10,7 +10,7 @@ class DataConnectorCest
     {
         $this->db = new DataConnector();
     }
-
+    
     // tests
     public function testForDataConnection(UnitTester $I): void
     {
