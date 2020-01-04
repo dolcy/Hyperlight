@@ -16,7 +16,7 @@ $response = Route\match([
     }, $request),
 
     Route\get('/', function () {
-        return Diactoros\html('<pre>Hello Root</pre>');
+        return Diactoros\html('<pre>Fantastic. Hello Root!</pre>');
     }, $request),
 
     Route\get('/foo', function () {
