@@ -15,7 +15,9 @@
     "vlucas/phpdotenv": "^3.6",
     "symfony/finder": "^4.4.1",
     "symfony/console": "^4.4.1",
-    "monolog/monolog": "^2.0"
+    "monolog/monolog": "^2.0",
+    "zendframework/zend-diactoros": "^2.2",
+    "zendframework/zend-httphandlerrunner": "^1.1"
   },
   "require-dev": {
     "codeception/codeception": "^4.0",
