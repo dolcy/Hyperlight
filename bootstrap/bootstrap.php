@@ -7,7 +7,7 @@ namespace Hyperlight\Bootstrap;
 use Cycle\ORM;
 use Hyperlight\Domain\User\User;
 
-// include main init file
+// include main init file for app
 require_once(__DIR__ . '/init.php');
 
 // include routes
