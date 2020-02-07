@@ -9,6 +9,7 @@ class SchemaFactoryCest
 {
     private $persistence;
 
+    // tests
     public function _before(UnitTester $I): void
     {
         $persistence = new DataConnector();

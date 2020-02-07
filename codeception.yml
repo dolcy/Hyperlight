@@ -7,6 +7,9 @@ paths:
 params:
     - .env.testing
 actor_suffix: Tester
+settings:
+  colors: true
+  strict_xml: true
 extensions:
     enabled:
         - Codeception\Extension\RunFailed

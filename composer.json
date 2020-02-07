@@ -1,6 +1,6 @@
 {
-  "name": "dolcy/hyperlite",
-  "description": "Hyperlite is a boilerplate based on Siler and Cycle ORM.",
+  "name": "dolcy/hyperlight",
+  "description": "Hyperlight is a boilerplate app based on Siler and Cycle ORM.",
   "license": "MIT",
   "authors": [{
     "name": "Shaughn Dolcy",
@@ -15,10 +15,12 @@
     "vlucas/phpdotenv": "^3.6",
     "symfony/finder": "^4.4.1",
     "symfony/console": "^4.4.1",
-    "monolog/monolog": "^2.0"
+    "monolog/monolog": "^2.0",
+    "zendframework/zend-diactoros": "^2.2",
+    "zendframework/zend-httphandlerrunner": "^1.1"
   },
   "require-dev": {
-    "codeception/codeception": "4.0.x-dev",
+    "codeception/codeception": "^4.0",
     "codeception/module-asserts": "^1.1",
     "codeception/verify": "^1.2",
     "codeception/specify": "^1.2",
@@ -26,13 +28,14 @@
     "codeception/module-phpbrowser": "^1.0",
     "phpstan/phpstan": "^0.12.2",
     "nunomaduro/phpinsights": "^1.11",
-    "flow/jsonpath": "^0.4.0"
+    "flow/jsonpath": "^0.4.0",
+    "php-coveralls/php-coveralls": "^2.2"
   },
   "autoload": {
     "psr-4": {
-      "Hyperlight\\Bootstrap\\Loader\\": "bootstrap/loader/",
+      "Hyperlight\\": "src/",
       "Hyperlight\\Config\\": "config/",
-      "Hyperlight\\": "src/"
+      "Hyperlight\\Bootstrap\\Loader\\": "bootstrap/loader/"
     }
   },
   "autoload-dev": {

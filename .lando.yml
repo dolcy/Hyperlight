@@ -6,7 +6,7 @@ config:
   via: nginx
   webroot: public
   database: mariadb:10.2
-  xdebug: false
+  xdebug: true
   node:
     type: node:8
     globals:
