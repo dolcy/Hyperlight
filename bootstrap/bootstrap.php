@@ -10,7 +10,7 @@ use Hyperlight\Domain\User\User;
 // include main init file for app
 require_once(__DIR__ . '/init.php');
 
-// include routes
+// include route files
 require_once(__DIR__ . '/../src/routes.php');
 
 // temporary orm test
